@@ -81,6 +81,17 @@ async function loadProducts() {
 
     products = data;
     console.log("Cantidad de productos:", products.length);
+
+    // DIAGNÓSTICO TEMPORAL: muestra el valor exacto de ACTIVO de
+    // cada producto, con comillas, para detectar espacios o
+    // caracteres ocultos. Se puede borrar una vez resuelto.
+    console.log(
+      "Valores exactos de ACTIVO:",
+      products.map(function (p) {
+        return JSON.stringify(p.ACTIVO);
+      })
+    );
+
     renderProducts();
   } catch (error) {
     console.error("Error cargando productos:", error);
