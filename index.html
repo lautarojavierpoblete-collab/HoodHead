@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Urban Style</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="#" class="logo">
+                URBAN STYLE
+            </a>
+
+            <nav class="nav" id="nav">
+
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- Botón hamburguesa: solo se ve en mobile (ver styles.css) -->
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <button class="cart-button" id="cartButton" aria-label="Abrir carrito">
+
+                    🛒
+
+                    <span id="cartCount">
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                NUEVA COLECCIÓN
+            </p>
+
+            <h1>
+                ESTILO QUE<br>
+                TE REPRESENTA
+            </h1>
+
+            <p>
+                Descubrí nuestra nueva colección de ropa.
+            </p>
+
+            <a href="#productos" class="hero-button">
+                VER PRODUCTOS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PRODUCTOS
+    ========================================== -->
+
+    <section class="products-section" id="productos">
+
+        <div class="section-header">
+
+            <p class="section-small">
+                NUESTRA TIENDA
+            </p>
+
+            <h2>
+                PRODUCTOS
+            </h2>
+
+            <p>
+                Todos nuestros productos se actualizan
+                automáticamente desde nuestro sistema.
+            </p>
+
+        </div>
+
+
+        <!--
+            IMPORTANTE:
+
+            NO colocar aquí la URL de Google Sheets.
+
+            Los productos serán cargados automáticamente
+            mediante script.js.
+        -->
+
+        <div
+            class="products-grid"
+            id="productsGrid"
+        >
+
+            <div class="loading-products">
+
+                <p>
+                    Cargando productos...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NOSOTROS
+    ========================================== -->
+
+    <section class="about-section" id="nosotros">
+
+        <div class="about-container">
+
+            <p class="section-small">
+                SOBRE NOSOTROS
+            </p>
+
+            <h2>
+                URBAN STYLE
+            </h2>
+
+            <p>
+                Somos una tienda de ropa enfocada en ofrecer
+                prendas modernas, cómodas y con estilo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACTO
+    ========================================== -->
+
+    <section class="contact-section" id="contacto">
+
+        <div class="contact-container">
+
+            <p class="section-small">
+                CONTACTO
+            </p>
+
+            <h2>
+                ¿TENÉS ALGUNA CONSULTA?
+            </h2>
+
+            <p>
+                Ponete en contacto con nosotros.
+            </p>
+
+            <a
+                href="mailto:contacto@urbanstyle.com"
+                class="contact-button"
+            >
+                CONTACTARNOS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CARRITO
+    ========================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+
+    <aside
+        class="cart-panel"
+        id="cartPanel"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Tu carrito
+            </h2>
+
+            <button
+                class="close-cart"
+                id="closeCart"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <p class="empty-cart">
+                Tu carrito está vacío.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    $0
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout-button"
+            >
+                FINALIZAR COMPRA
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Urban Style. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
