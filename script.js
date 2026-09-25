@@ -102,6 +102,17 @@ async function loadProducts() {
 }
 
 function isProductActive(product) {
+  // -----------------------------------------------------
+  // TEMPORAL: el filtro de ACTIVO está desactivado a propósito
+  // mientras se resuelve por qué no coincide con los valores de
+  // Sheets. Ahora mismo TODOS los productos se muestran, estén
+  // marcados como activos o no. Para reactivar el filtro, borrá
+  // la línea "return true;" de abajo y descomentá el bloque
+  // original.
+  // -----------------------------------------------------
+  return true;
+
+  /*
   const activo = String(product.ACTIVO || "").trim().toUpperCase();
   return (
     activo === "SI" ||
@@ -110,6 +121,7 @@ function isProductActive(product) {
     activo === "ACTIVO" ||
     activo === "1"
   );
+  */
 }
 
 function renderProducts() {
