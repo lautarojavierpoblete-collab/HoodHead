@@ -1,5 +1,5 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbz-kG_TQiPgwzgeJgXyyPNw3iFsXRpO57hs0rIjC9gYCNBIm1z8S9wliczmksTLbpdS/exec";
+  "https://script.google.com/macros/s/AKfycbw9a8DrxlTE0rtJEqumlR_WrB5MXNVjVi7PVX_xgWgKCHc87omx5Hk_w6hN9g4GRfib/exec";
 
 // Número de WhatsApp que recibe los pedidos, en formato internacional
 // sin espacios ni signos: código de país + código de área + número.
