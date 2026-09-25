@@ -1,6 +1,10 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbz-kG_TQiPgwzgeJgXyyPNw3iFsXRpO57hs0rIjC9gYCNBIm1z8S9wliczmksTLbpdS/exec";
 
+// Número de WhatsApp que recibe los pedidos, en formato internacional
+// sin espacios ni signos: código de país + código de área + número.
+const WHATSAPP_NUMBER = "5492634797676";
+
 let products = [];
 let cart = [];
 
@@ -378,13 +382,50 @@ function formatPrice(price) {
   }).format(price);
 }
 
+// ---------------------------------------------------------
+// Arma el texto del pedido a partir del carrito, listo para
+// enviarlo por WhatsApp.
+// ---------------------------------------------------------
+function buildWhatsappMessage() {
+  let message = "Hola! Quiero hacer este pedido:\n\n";
+  let total = 0;
+
+  cart.forEach(function (product) {
+    const price = toNumber(product.PRECIO);
+    const quantity = Number(product.quantity) || 1;
+    const subtotal = price * quantity;
+    total += subtotal;
+
+    message +=
+      "• " +
+      product.NOMBRE +
+      " x" +
+      quantity +
+      " — " +
+      formatPrice(subtotal) +
+      "\n";
+  });
+
+  message += "\nTotal: " + formatPrice(total);
+
+  return message;
+}
+
 if (checkoutButton) {
   checkoutButton.addEventListener("click", function () {
     if (cart.length === 0) {
       alert("Tu carrito está vacío.");
       return;
     }
-    alert("El sistema de pedidos se conectará próximamente.");
+
+    const message = buildWhatsappMessage();
+    const url =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(url, "_blank");
   });
 }
 
